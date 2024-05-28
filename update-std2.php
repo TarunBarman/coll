@@ -1,14 +1,40 @@
 <?php
-
 include("database.php");
+
 session_start();
+// error_reporting(0);
+// if (!isset($_GET["id"]) || !filter_var($_GET["id"], FILTER_VALIDATE_INT)) {
+//     die("Error: 'id' parameter is missing or invalid.");
+// }
 
 
+    $id=$_GET["id"];
 
 
+// $insert_qry = " SELECT *  FROM std_reg where id='$id'";
+$query = " SELECT * FROM STD_REG WHERE id='$id'";
+
+$data = mysqli_query($conn,$query);
+$total = mysqli_num_rows($data);
+// $result =mysqli_fetch_array($data);
+$result = mysqli_fetch_assoc($data);
+// echo $_GET['id'];
+// echo $_GET['fn'];
+// echo $_GET['ln'];
+// echo $_GET['si'];
+// echo $_GET['ftn'];
+// echo $_GET['gen'];
+// echo $_GET['cat'];
+// echo $_GET['dob'];
+// echo $_GET['em'];
+// echo $_GET['ph'];
+// echo $_GET['course'];
+// echo $_GET['add'];
+// echo $_GET['st'];
+// echo $_GET['pin'];
+// echo $_GET['photo'];
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +43,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student update</title>
+    <title>Update Student Details</title>
     <link rel="stylesheet" href="std-style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-1ZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9s+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -26,135 +52,70 @@ session_start();
 
 <body>
 
+
     <?php
-   
 // error_reporting(0);
- 
 
      if(isset($_POST['update']))
+     
+     
+     
+     {
     
-{
+        // $id         = $_POST['id'];
+        $fname      = $_POST['fname'];
+        $lname      = $_POST['lname'];
+        $student_id = $_POST['student_id'];
+        $fathername = $_POST['fathername'];
+        $gender     = $_POST['gender'];
+        $category   = $_POST['category'];
+        $dob        = $_POST['dob'];
+        $email      = $_POST['email'];
+        $ph         = $_POST['ph'];
+        $course     = $_POST['course'];
+        $address    = $_POST['address'];
+        $state      = $_POST['state'];
+        $pincode    = $_POST['pin'];
+        $file       = $_POST['myfile'];
+
+
     
-    $filename = $_FILES["uploadfile"]["name"];
-    $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "images/".$filename;
-    move_uploaded_file($tempname,$folder);
-
-    $id         = $_POST['id'];
-    $fname      = $_POST['fname'];
-    $lname      = $_POST['lname'];
-    $student_id = $_POST['student_id'];
-    $fathername = $_POST['father_name'];
-    $gender     = $_POST['gender'];
-    $category   = $_POST['category'];
-    $dob        = $_POST['dob'];
-    $email      = $_POST['email'];
-    $ph         = $_POST['phone_number'];
-    $course     = $_POST['course'];
-    $add        = $_POST['address'];
-    $state      = $_POST['state'];
-    $pin        = $_POST['pincode'];
-    $file      =  $_POST['myfile'];
-       
-       
-
-        // if ($fname != "" && $lname != "" && $fathername != "" && $gender != "" && $category != "" && $dob != "" && $email != "" && $ph != "" && $course != "" && $add != "" && $state != "" && $pin != "" && $file['name'] != "") 
-        // {
-       
-        
-            // id
- 
-             $checkstd_reg = "SELECT * FROM STD_REG ORDER BY id DESC LIMIT 1";
-             $checkresult = mysqli_query($conn, $checkstd_reg);
-             
-             if(mysqli_num_rows($checkresult)>0)
-           {
-                if($row = mysqli_fetch_assoc($checkresult))
-               {
-
-                         $std_reg = $row['student_id'];
-                         $get_numbers = str_replace("24S", "", $std_reg);
-                         $id_increase = (int)$get_numbers+1;
-                         $get_string = str_pad($id_increase, 3,0, STR_PAD_LEFT);
-                         $student_id = "24S" .$get_string;
-
-                        //  $insert_qry = "INSERT INTO std_reg VALUES ('$id','$folder','$fname','$lname', '$student_id', '$fathername','$gender','$category','$dob', '$email', '$ph','$course','$add','$state','$pin','$file')";          
-                         $insert_qry = "UPDATE STD_REG set fname='$fname', lname='$lname', fathername='$fathername', gender='$gender', category='$category', dob='$dob', email='$email', ph='$ph', course='$course', address='$address', state='$state', pincode='$pincode' WHERE id='$id'";
-                        
-                         $result = mysqli_query($conn, $insert_qry);
-
-                           if($result)
-                             {
-                              echo "<script> alert('registration Number: .$student_id') </script>";
-                              ?>
-                              <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/user-index.php" />
- 
-                         <?php 
-                               }
-                             else
-                                {
-                                  echo "error";
-                                 }                   
-                }
-            }      
-                   else
-                  {
-                   $student_id = "24S001";
-                //    $insert_qry = "INSERT INTO std_reg  VALUES ('$id','$folder','$fname','$lname', '$student_id', '$fathername','$gender','$category','$dob', '$email', '$ph','$course','$add','$state','$pin','$file')";          
-                    $insert_qry = "UPDATE STD_REG set fname='$fname', lname='$lname', fathername='$fathername', gender='$gender', category='$category', dob='$dob', email='$email', ph='$ph', course='$course', address='$address', state='$state', pincode='$pincode' WHERE id='$id'";
-                   
-                    $result = mysqli_query($conn, $insert_qry);                 
-                       if($result)
-                       {               
-                         echo "<script> alert('registration Number: .$student_id') </script>";
-                         ?>
-                             <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/user-index.php" />
-
-                        <?php             
-                    }   
-                     else
-                      {
-                       echo "error";      
-                }
-            }        
-            // else{ 
-            // echo "Please fill the field";
-            //                 } 
- }
-
-    // }
+    // $query =  "INSERT INTO register_all values('$id','$fname', '$email', '$pwd','$cpwd', '$user_type')";
    
+                 
+    $query = "UPDATE STD_REG set fname='$fname', lname='$lname', fathername='$fathername', gender='$gender', category='$category', dob='$dob', email='$email', ph='$ph', course='$course', address='$address', state='$state', pincode='$pincode' WHERE id='$id'";
+    $data = mysqli_query($conn,$query);
 
-    //     if($id != "" &&  $fname != "" && $lname != "" && $student_id != "" &&  $fathername != "" &&  $gender != "" &&  $category != "" &&  $dob != "" &&  $email != "" && $ph != "" && $course != "" && $add != "" && 
-    //     $state != "" && $pin != "" && $file != "" )
+    if($data)
+    {
+        echo "<script> alert ('Data inserted Succecfully') </script>";
+        // header('location:login.php');
+        ?>
 
-    //     $query =  "INSERT INTO std_reg values('$id','$fname','$lname', '$student_id', '$fathername','$gender','$category','$dob', '$email', '$ph','$course','$add','$state','$pin','$file')";
-    //     $data = mysqli_query($conn,$query);
-
-    //     if($data)
-    //     {
-    //         echo "<script> alert('Data inserted Succecfully') </script>";
-    //         // header('location:.php');
-    //     }
-    //     else
-    //     {
-    //         echo "failed";
-    //     }
-    // }
+        <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/login.php"/>
     
-    // else{
-    //     echo "Please fill the field";
+    
+        <?php
+       
+    }
+    else
+    {
+        echo "failed";
+    }
+}
+else{
+    // echo "Please fill the field";
 
-    // }
+}
+  
 
 ?>
-
-<div class="wrapper">
+    <div class="wrapper">
         <div class="title"> Update Student Details
         </div>
         <!-- <form action="update-std.php?id=95 method="post" enctype="multipart/form-data"> -->
 
-        <form action="update-std.php?id=<?php echo $id; ?>" enctype="multipart/form-data" data-netlify="true" method="post">
+        <form action="update-std.php" data-netlify="true" method="post">
             <div class="form">
 
                 <div class="inputfield">
