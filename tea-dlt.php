@@ -82,7 +82,7 @@ table td{
                 </div>
                 <ul class="nav-bar">
                     <a href="logout.php" class="nav-btn">
-                        Sing out
+                        Sign out
                         <img src="assets/img/Vector.png" alt="">
                     </a>
                     <a href="#"><i class="fa-solid fa-bars" id="menu-icon"></i></a>
@@ -97,7 +97,7 @@ table td{
     <section class="first-section">
 
         <div class="text-container">
-            <h2> Wellcome to</h2>
+            <h2> Welcome to</h2>
             <h1 class="lg_text">Teacher Record</h1>
         </div>
     </section>
@@ -147,10 +147,10 @@ if($total != 0)
         <th width=>Dath of Birth</th>
         <th >Email</th>
         <th >Phone No</th>
-        <th width=>Course</th>
-        <th >Post</th>
-        <th >Education</th>
-        <th >Pin Code</th>  
+        <th width=>Department (Subject)</th>
+        <th >Designation</th>
+        <th >Education Qualification</th>
+        <th >Languages Known</th>  
         <th width=50% >Operation</th>
     </tr>
 
@@ -176,7 +176,7 @@ if($total != 0)
             <td>".$result['course'] ."</td>
             <td>".$result['post'] ."</td>
             <td>".$result['edu'] ."</td>
-            <td>".$result['pin'] ."</td>
+            <td>".$result['languages'] ."</td>
             
            
           

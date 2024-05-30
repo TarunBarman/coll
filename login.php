@@ -18,7 +18,7 @@ session_start();
 <body>
     <div class="container">
         <div class="Form login-form">
-            <h2>Login</h2>
+            <h2>Sign in</h2>
             <form action="login.php" method="POST" autocomplete="off">
                 <div class="input-box">
                     <i class='bx bxs-user'></i>
@@ -51,7 +51,7 @@ session_start();
 
                 <button type="submit" class="btn" name="login" value="login">
                     <!-- <a href="user-index.php" style="text-decoration: none;"> -->
-                    Login</a>
+                    Sign in</a>
                 </button>
 
             </form>

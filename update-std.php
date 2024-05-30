@@ -3,12 +3,48 @@
 include("database.php");
 session_start();
 
+// Fetch student data if 'id' is provided in the GET request
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $query = "SELECT * FROM STD_REG WHERE id = '$id'";
+    $data = mysqli_query($conn, $query);
+
+    if (mysqli_num_rows($data) > 0) {
+        $result = mysqli_fetch_assoc($data);
+    } else {
+        echo "No student found with the given ID.";
+        exit;
+    }
+} else {
+    echo "No student ID provided.";
+    exit;
+}
 
 
+// $insert_qry = " SELECT *  FROM std_reg where id='$id'";
+// $query = " SELECT * FROM STD_REG WHERE id='$id'";
 
+// $data = mysqli_query($conn,$query);
+// $total = mysqli_num_rows($data);
+// // $result =mysqli_fetch_array($data);
+// $result = mysqli_fetch_assoc($data);
+// <!-- echo $_GET['id']; -->
+// echo $_GET['fn'];
+// echo $_GET['ln'];
+// echo $_GET['si'];
+// echo $_GET['ftn'];
+// echo $_GET['gen'];
+// echo $_GET['cat'];
+// echo $_GET['dob'];
+// echo $_GET['em'];
+// echo $_GET['ph'];
+// echo $_GET['course'];
+// echo $_GET['add'];
+// echo $_GET['st'];
+// echo $_GET['pin'];
+// echo $_GET['photo'];
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +53,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student update</title>
+    <title>Update Student Details</title>
     <link rel="stylesheet" href="std-style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-1ZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9s+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -26,135 +62,70 @@ session_start();
 
 <body>
 
+
     <?php
-   
 // error_reporting(0);
- 
 
      if(isset($_POST['update']))
+     
+     
+     
+     {
     
-{
+        $id         = $_POST['id'];
+        $fname      = $_POST['fname'];
+        $lname      = $_POST['lname'];
+        $student_id = $_POST['student_id'];
+        $fathername = $_POST['fathername'];
+        $gender     = $_POST['gender'];
+        $category   = $_POST['category'];
+        $dob        = $_POST['dob'];
+        $email      = $_POST['email'];
+        $ph         = $_POST['ph'];
+        $course     = $_POST['course'];
+        $address    = $_POST['address'];
+        $state      = $_POST['state'];
+        $pin    = $_POST['pin'];
+        $file       = $_POST['myfile'];
+
+
     
-    $filename = $_FILES["uploadfile"]["name"];
-    $tempname = $_FILES["uploadfile"]["tmp_name"];
-    $folder = "images/".$filename;
-    move_uploaded_file($tempname,$folder);
-
-    $id         = $_POST['id'];
-    $fname      = $_POST['fname'];
-    $lname      = $_POST['lname'];
-    $student_id = $_POST['student_id'];
-    $fathername = $_POST['father_name'];
-    $gender     = $_POST['gender'];
-    $category   = $_POST['category'];
-    $dob        = $_POST['dob'];
-    $email      = $_POST['email'];
-    $ph         = $_POST['phone_number'];
-    $course     = $_POST['course'];
-    $add        = $_POST['address'];
-    $state      = $_POST['state'];
-    $pin        = $_POST['pincode'];
-    $file      =  $_POST['myfile'];
-       
-       
-
-        // if ($fname != "" && $lname != "" && $fathername != "" && $gender != "" && $category != "" && $dob != "" && $email != "" && $ph != "" && $course != "" && $add != "" && $state != "" && $pin != "" && $file['name'] != "") 
-        // {
-       
-        
-            // id
- 
-             $checkstd_reg = "SELECT * FROM STD_REG ORDER BY id DESC LIMIT 1";
-             $checkresult = mysqli_query($conn, $checkstd_reg);
-             
-             if(mysqli_num_rows($checkresult)>0)
-           {
-                if($row = mysqli_fetch_assoc($checkresult))
-               {
-
-                         $std_reg = $row['student_id'];
-                         $get_numbers = str_replace("24S", "", $std_reg);
-                         $id_increase = (int)$get_numbers+1;
-                         $get_string = str_pad($id_increase, 3,0, STR_PAD_LEFT);
-                         $student_id = "24S" .$get_string;
-
-                        //  $insert_qry = "INSERT INTO std_reg VALUES ('$id','$folder','$fname','$lname', '$student_id', '$fathername','$gender','$category','$dob', '$email', '$ph','$course','$add','$state','$pin','$file')";          
-                         $insert_qry = "UPDATE STD_REG set fname='$fname', lname='$lname', fathername='$fathername', gender='$gender', category='$category', dob='$dob', email='$email', ph='$ph', course='$course', address='$address', state='$state', pincode='$pincode' WHERE id='$id'";
-                        
-                         $result = mysqli_query($conn, $insert_qry);
-
-                           if($result)
-                             {
-                              echo "<script> alert('registration Number: .$student_id') </script>";
-                              ?>
-                              <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/user-index.php" />
- 
-                         <?php 
-                               }
-                             else
-                                {
-                                  echo "error";
-                                 }                   
-                }
-            }      
-                   else
-                  {
-                   $student_id = "24S001";
-                //    $insert_qry = "INSERT INTO std_reg  VALUES ('$id','$folder','$fname','$lname', '$student_id', '$fathername','$gender','$category','$dob', '$email', '$ph','$course','$add','$state','$pin','$file')";          
-                    $insert_qry = "UPDATE STD_REG set fname='$fname', lname='$lname', fathername='$fathername', gender='$gender', category='$category', dob='$dob', email='$email', ph='$ph', course='$course', address='$address', state='$state', pincode='$pincode' WHERE id='$id'";
-                   
-                    $result = mysqli_query($conn, $insert_qry);                 
-                       if($result)
-                       {               
-                         echo "<script> alert('registration Number: .$student_id') </script>";
-                         ?>
-                             <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/user-index.php" />
-
-                        <?php             
-                    }   
-                     else
-                      {
-                       echo "error";      
-                }
-            }        
-            // else{ 
-            // echo "Please fill the field";
-            //                 } 
- }
-
-    // }
+    // $query =  "INSERT INTO register_all values('$id','$fname', '$email', '$pwd','$cpwd', '$user_type')";
    
+                 
+    $query = "UPDATE STD_REG set fname='$fname', lname='$lname', fathername='$fathername', gender='$gender', category='$category', dob='$dob', email='$email', ph='$ph', course='$course', address='$address', state='$state', pin='$pin' WHERE id='$id'";
+    $data = mysqli_query($conn,$query);
 
-    //     if($id != "" &&  $fname != "" && $lname != "" && $student_id != "" &&  $fathername != "" &&  $gender != "" &&  $category != "" &&  $dob != "" &&  $email != "" && $ph != "" && $course != "" && $add != "" && 
-    //     $state != "" && $pin != "" && $file != "" )
+    if($data)
+    {
+        echo "<script> alert ('Data inserted Succecfully') </script>";
+        header('location:display-std.php');
+        // 
 
-    //     $query =  "INSERT INTO std_reg values('$id','$fname','$lname', '$student_id', '$fathername','$gender','$category','$dob', '$email', '$ph','$course','$add','$state','$pin','$file')";
-    //     $data = mysqli_query($conn,$query);
-
-    //     if($data)
-    //     {
-    //         echo "<script> alert('Data inserted Succecfully') </script>";
-    //         // header('location:.php');
-    //     }
-    //     else
-    //     {
-    //         echo "failed";
-    //     }
-    // }
+        // <!-- <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/login.php"/> -->
     
-    // else{
-    //     echo "Please fill the field";
+    
+        // 
+       
+    }
+    else
+    {
+        echo "failed";
+    }
+}
+else{
+    // echo "Please fill the field";
 
-    // }
+}
+  
 
 ?>
-
-<div class="wrapper">
+    <div class="wrapper">
         <div class="title"> Update Student Details
         </div>
         <!-- <form action="update-std.php?id=95 method="post" enctype="multipart/form-data"> -->
 
-        <form action="update-std.php?id=<?php echo $id; ?>" enctype="multipart/form-data" data-netlify="true" method="post">
+        <form action="update-std.php?id=<?php echo $result['id']; ?>" data-netlify="true" method="post">
             <div class="form">
 
                 <div class="inputfield">
@@ -322,66 +293,26 @@ session_start();
                 <div class="inputfield">
                     <label>State</label>
                     <div class="custom_select">
-                        <select id="state" name="state" required>
+                        <select name="state" required>
                             <option value="">--Select your state--</option>
-                            <!-- <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option> -->
-                            <!-- <option value="Andhra Pradesh">Andhra Pradesh</option> -->
-                            <option value="Arunachal Pradesh"
-                            <?php 
-                                if($result['state'] == 'Arunachal Pradesh')
-                                {
-                                    echo "selected";
-                                }
-                          ?> 
-                            >Arunachal Pradesh</option>
-                            <option value="Assam"
-                            <?php 
-                                if($result['state'] == 'Assam')
-                                {
-                                    echo "selected";
-                                }
-                          ?> 
-                            >Assam</option>
-                            <option value="Bihar"
-                            <?php 
-                                if($result['state'] == 'Bihar')
-                                {
-                                    echo "selected";
-                                }
-                          ?> 
-                            >Bihar</option>
-                            <!-- <option value="Chandigarh">Chandigarh</option>
-                            <option value="Chhattisgarh">Chhattisgarh</option>
-                            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
-                            <option value="Daman and Diu">Daman and Diu</option>
-                            <option value="Delhi">Delhi</option>
-                            <option value="Goa">Goa</option>
-                            <option value="Gujarat">Gujarat</option>
-                            <option value="Haryana">Haryana</option>
-                            <option value="Himachal Pradesh">Himachal Pradesh</option>
-                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-                            <option value="Jharkhand">Jharkhand</option>
-                            <option value="Karnataka">Karnataka</option>
-                            <option value="Kerala">Kerala</option>
-                            <option value="Ladakh">Ladakh</option>
-                            <option value="Lakshadweep">Lakshadweep</option>
-                            <option value="Madhya Pradesh">Madhya Pradesh</option>
-                            <option value="Maharashtra">Maharashtra</option>
-                            <option value="Manipur">Manipur</option>
-                            <option value="Meghalaya">Meghalaya</option>
-                            <option value="Mizoram">Mizoram</option>
-                            <option value="Nagaland">Nagaland</option>
-                            <option value="Odisha">Odisha</option>
-                            <option value="Puducherry">Puducherry</option>
-                            <option value="Punjab">Punjab</option>
-                            <option value="Rajasthan">Rajasthan</option>
-                            <option value="Sikkim">Sikkim</option>
-                            <option value="Tamil Nadu">Tamil Nadu</option>
-                            <option value="Telangana">Telangana</option>
-                            <option value="Tripura">Tripura</option>
-                            <option value="Uttar Pradesh">Uttar Pradesh</option>
-                            <option value="Uttarakhand">Uttarakhand</option>
-                            <option value="West Bengal">West Bengal</option> -->
+                            <?php
+            // Loop through an array of states to generate the options dynamically
+            $states = array(
+                "Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar",
+                "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi",
+                "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand",
+                "Karnataka", "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh", "Maharashtra",
+                "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Puducherry", "Punjab",
+                "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh",
+                "Uttarakhand", "West Bengal"
+            );
+
+            foreach ($states as $state) {
+                // Check if the current state matches the one in the database, and mark it as selected if so
+                $selected = ($state === $result['state']) ? 'selected' : '';
+                echo "<option value='$state' $selected>$state</option>";
+            }
+            ?>
                         </select>
                     </div>
                 </div>
@@ -401,7 +332,7 @@ session_start();
                 <div class="inputfield">
                     <label>Upload Image</label>
                     <p id="file-size">*Max size 100kb.</p>
-                    <input type="file" name="uploadfile" id="" required>
+                    <input type="file" name="uploadfile" id="" >
                     
                 </div>
 

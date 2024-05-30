@@ -31,7 +31,7 @@ session_start();
                                 <li>Admin</li>
                             </a>
                             <a href="cont-index.php">
-                                <li>contect Us
+                                <li>Contact Us
                                 </li>
                             </a>
 
@@ -45,7 +45,7 @@ session_start();
                 </div>
                 <ul class="nav-bar">
                     <a href="login.php" class="nav-btn">
-                        Sing in
+                        Sign in
                         <img src="assets/img/Vector.png" alt="">
                     </a>
                     <a href="#"><i class="fa-solid fa-bars" id="menu-icon"></i></a>
@@ -60,16 +60,16 @@ session_start();
     <section class="first-section">
 
         <div class="text-container">
-            <h2> Wellcome to</h2>
+            <h2> Welcome to</h2>
             <h1 class="lg_text">Acharya Prafulla Chandra Roy Government College Student Portal</h1>
             <div class="explore-hero">
-                <a href="register-page.php"><button class="btn-hero">
+                <a href="team-page.php"><button class="btn-hero">
                         Explore Now
                     </button></a>
                 <a href="https://youtu.be/mX0wgQVTNLw?si=0meYLCKSeyNVEWbu">
                     <span class="watch-view"><i class="fa-regular fa-circle-play"
                             style="color: #f4712a;"></i></span>
-                    watch View</a>
+                    Watch View</a>
             </div>
 
         </div>

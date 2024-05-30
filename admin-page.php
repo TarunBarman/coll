@@ -75,7 +75,7 @@ session_start();
                 </div>
                 <ul class="nav-bar">
                     <a href="logout.php" class="nav-btn">
-                        Log out
+                       Sign out
                         <img src="assets/img/Vector.png" alt="">
                     </a>
                     <a href="#"><i class="fa-solid fa-bars" id="menu-icon"></i></a>
@@ -90,7 +90,7 @@ session_start();
     <section class="first-section">
 
         <div class="text-container">
-            <h2> Wellcome to</h2>
+            <h2> Welcome to</h2>
             <h1 class="lg_text">Acharya Prafulla Chandra Roy Government College Admin Page</h1>
 
 

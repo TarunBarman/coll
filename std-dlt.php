@@ -81,8 +81,8 @@ table td{
                     </div>
                 </div>
                 <ul class="nav-bar">
-                    <a href="#" class="nav-btn">
-                        Sing out
+                    <a href="logout.php" class="nav-btn">
+                        Sign out
                         <img src="assets/img/Vector.png" alt="">
                     </a>
                     <a href="#"><i class="fa-solid fa-bars" id="menu-icon"></i></a>
@@ -97,7 +97,7 @@ table td{
     <section class="first-section">
 
         <div class="text-container">
-            <h2> Wellcome to</h2>
+            <h2> Welcome to</h2>
             <h1 class="lg_text">Students Record</h1>
         </div>
     </section>

@@ -96,7 +96,7 @@ session_start();
                 </div>
                 <div class="forgot-section">
                     <span><input type="checkbox" name="" id="checked" required>Remember Me</span>
-                    <span><a href="#" onclick="message()">Forgot Password ?</a></span>
+                    <!-- <span><a href="#" onclick="message()">Forgot Password ?</a></span> -->
                 </div>
 
 
@@ -111,12 +111,7 @@ session_start();
 
             <!-- <p class="RegisteBtn RegiBtn"><a href="#">Register Now</a></p> -->
         </div>
-        <script>
-            function message() {
-                alert("yad karke rakho yar!");
-            }
-
-        </script>
+       
 </body>
 
 </html>

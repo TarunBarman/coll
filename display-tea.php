@@ -20,7 +20,7 @@
 
 .update:hover {
     transition: 0.2s ease-in-out;
-    /* opacity: 0.4; */
+    opacity: 0.4;
     background-color: #F66F4D; ;
     color: black;
     cursor: pointer;
@@ -42,13 +42,13 @@
  color: white;
 
 }
-
+/*  
 table th,tr,td{
    
     text-align:center;
     box-sizing: border-box;
     border: 2px solid black;
-    /* border:none; */
+    
    
 
 }
@@ -62,7 +62,77 @@ table td{
     font-size: 10px;
 
 
+} */
+html,
+body {
+	height: 100%;
 }
+
+body {
+	margin: 0;
+	/* background: linear-gradient(45deg, #49a09d, #5f2c82); */
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+   
+
+
+}
+
+table {
+	width: 500px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    backdrop-filter: blur(11px);
+    background: transparent;
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	
+}
+
+th {
+	text-align: left;
+}
+
+
+	th {
+		background-color: #55608f;
+	}
+
+
+
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+
 
 
     </style>
@@ -82,7 +152,7 @@ table td{
                 </div>
                 <ul class="nav-bar">
                     <a href="logout.php" class="nav-btn">
-                        Sing out
+                        Sign out
                         <img src="assets/img/Vector.png" alt="">
                     </a>
                     <a href="#"><i class="fa-solid fa-bars" id="menu-icon"></i></a>
@@ -97,7 +167,7 @@ table td{
     <section class="first-section">
 
         <div class="text-container">
-            <h2> Wellcome to</h2>
+            <h2> Welcome to</h2>
             <h1 class="lg_text">Teacher Record</h1>
         </div>
     </section>
@@ -133,6 +203,7 @@ if($total != 0)
  ?>
 
 <center>
+
     <table border=1px cellspacing=4>
     <tr>
 
@@ -147,10 +218,10 @@ if($total != 0)
         <th width=>Dath of Birth</th>
         <th >Email</th>
         <th >Phone No</th>
-        <th width=>Course</th>
-        <th >Post</th>
-        <th >Education</th>
-        <th >Pin Code</th>  
+        <th width=>Department (Subject)</th>
+        <th >Designation</th>
+        <th >Education Qualification</th>
+        <th >Languages Known</th>  
         <th width=50% >Operation</th>
     </tr>
 
@@ -176,7 +247,7 @@ if($total != 0)
             <td>".$result['course'] ."</td>
             <td>".$result['post'] ."</td>
             <td>".$result['edu'] ."</td>
-            <td>".$result['pin'] ."</td>
+            <td>".$result['languages'] ."</td>
             
            
           

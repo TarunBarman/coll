@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sen:wght@400..800&display=swap');
 
 :root {
-    --bodycolor: #FAF8ED;
+    /* --bodycolor: #FAF8ED; */
     --textcolor: #484848;
     --btngcolor: #F66F4D;
     --sectext: #000000;
@@ -28,17 +28,21 @@ html {
     font-size: 60.5%;
 }
 
-html,
+
 body {
-    height: 100vh;
+    /* max-height: 100%; */
     /* margin: 0; */
     line-height: 1.4;
     font-weight: 300;
     font-family: "Inter", sans-serif;
     font-family: "sen", sans-serif;
-    background: var(--bodycolor);
+    /* background: var(--bodycolor); */
     scroll-behavior: smooth;
     align-items: center;
+    /* background:url(images/Fotoram.io.png); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
 
 
@@ -64,7 +68,7 @@ button:hover {
     opacity: 0.4;
 }
 
-header {
+/* header {
     top: 0;
     left: 0%;
     width: 100%;
@@ -76,6 +80,19 @@ header {
     background: var(--bodycolor);
 
 
+} */
+header {
+    /* Original CSS properties */
+    top: 0;
+    left: 0%;
+    width: 100%;
+    box-shadow: 1px 0px 2px rgba(114, 114, 114, 0.411);
+    /* Change position to sticky and adjust z-index */
+    position:fixed;
+    /* z-index: 1001; Adjust z-index value as needed */
+    background-color: var(--navcolor);
+    padding: 1rem;
+    background: var(--bodycolor);
 }
 
 .nav-container {
@@ -228,13 +245,13 @@ nav a :hover {
 .text-container h1{
     text-align: center;
     font-size: var(--h3font);
-    color: #484848;
+    /* color: #484848; */
 
 
 
 }
 table {
-  font-size: 1rem;
-  background-color: #ffffff;
+  /* font-size: 1rem; */
+  /* background-color: #ffffff; */
 
 }

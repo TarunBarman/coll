@@ -42,7 +42,9 @@ include("database.php");
         $course = $_POST['course'];
         $post = $_POST['post'];
         $edu = $_POST['education'];
-        $pin        = $_POST['pincode'];
+        $lang        = $_POST['languages'];
+        $lang1        = implode(",",$lang);
+
         $file   = $_POST['myfile'];
         
    
@@ -89,7 +91,7 @@ include("database.php");
                                  $get_string = str_pad($id_increase, 3,0, STR_PAD_LEFT);
                                  $emp_id = "24T" .$get_string;
         
-                                 $insert_qry = "INSERT INTO tea_reg VALUES ('$id','$folder','$fname','$lname', '$emp_id','$gender','$category','$dob', '$email', '$ph','$course','$post','$edu','$pin','$file')";          
+                                 $insert_qry = "INSERT INTO tea_reg VALUES ('$id','$folder','$fname','$lname', '$emp_id','$gender','$category','$dob', '$email', '$ph','$course','$post','$edu','$lang1','$file')";          
                                  $result = mysqli_query($conn, $insert_qry);
         
                                    if($result)
@@ -109,7 +111,7 @@ include("database.php");
                            else
                           {
                            $emp_id = "24T001";
-                           $insert_qry = "INSERT INTO tea_reg VALUES ('$id','$folder','$fname','$lname', '$emp_id','$gender','$category','$dob', '$email', '$ph','$course','$post','$edu','$pin','$file')";          
+                           $insert_qry = "INSERT INTO tea_reg VALUES ('$id','$folder','$fname','$lname', '$emp_id','$gender','$category','$dob', '$email', '$ph','$course','$post','$edu','$lang1','$file')";          
 
                            $result = mysqli_query($conn, $insert_qry);                 
                                if($result)
@@ -145,11 +147,7 @@ include("database.php");
                     <input type="text" class="input" id="name" name="lname" placeholder="Enter last name" maxlength="30"
                         pattern="[A-Za-z]{1,32}" title="Enter only alphabets" required>
                 </div>
-                <!-- <div class="inputfield" id="empid">
-                    <label for="">ID</label>
-                    <input type="text" name="empid" value="" id="empid" readonly>
-                    
-                </div> -->
+              
               
 
                 <div class="inputfield" id="gender">
@@ -170,6 +168,7 @@ include("database.php");
                     <label for="">Date of Birth</label>
                     <input type="date" class="input" name="dob" required>
                 </div>
+                
 
                 <div class="inputfield">
                     <label>Email Address</label>
@@ -193,10 +192,10 @@ include("database.php");
                         title="Please enter valid phone number">
                 </div>
                 <div class="inputfield">
-                    <label>Course</label>
+                    <label>Department (Subject)</label>
                     <div class="custom_select">
                         <select id="course" name="course" required>
-                            <option value="">--Select your Course--</option>
+                            <option value="">--Select your subject--</option>
                             <option value="Botany">Botany</option>
                             <option value="Chemistry">Chemistry</option>
                             <option value="Computer Science">Computer Science</option>
@@ -206,7 +205,7 @@ include("database.php");
                     </div>
                 </div>
                 <div class="inputfield">
-                    <label>Post</label>
+                    <label>Designation</label>
                     <div class="custom_select">
                         <select id="post" name="post" required>
                             <option value="">--Select--</option>
@@ -223,12 +222,12 @@ include("database.php");
                 </div> -->
 
                 <div class="inputfield">
-                    <label>Education
+                    <label>Education Qualification
                     </label>
                     <textarea class="textarea" name="education" id="" cols="30" rows="5" placeholder="Enter education details"
                         pattern="^[a-zA-Z][a-zA-Z0-9-_.]{5,12}$" maxlength="100" required></textarea>
                 </div>
-
+                
                 <!-- <div class="inputfield">
                     <label>State</label>
                     <div class="custom_select">
@@ -275,11 +274,11 @@ include("database.php");
                     </div>
                 </div> -->
 
-                <div class="inputfield">
+                <!-- <div class="inputfield">
                     <label>Pin code</label>
                     <input type="text" class="input" name="pincode" placeholder="Enter your pin code" maxlength="6"
                         pattern="^[0-9]{6}$" required>
-                </div>
+                </div> -->
 
                 <div class="inputfield">
                     <label>Upload Photo</label>
@@ -287,6 +286,22 @@ include("database.php");
                     <input type="file" name="uploadfile" id="" placeholder="Upload your photo" rows="7" required />
 
                 </div>
+                <div class="inputfield">
+                <label for="languages">Languages Known:</label><br>
+        
+                          <input type="checkbox" id="english" name="languages[]" value="English">
+                          <label for="english">English</label><br>
+
+                           <input type="checkbox" id="hindi" name="languages[]" value="Hindi">
+                           <label for="hindi">Hindi</label><br>
+        
+                          <input type="checkbox" id="bengali" name="languages[]" value="Bengali">
+                          <label for="bengali">Bengali</label><br>
+        
+                           <input type="checkbox" id="nepali" name="languages[]" value="Nepali">
+                           <label for="nepali">Nepali</label><br>
+                </div>
+
 
                 <div class="inputfield terms">
                     <label class="check">
