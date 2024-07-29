@@ -14,7 +14,6 @@
     --h2font: 6rem;
     --h3font: 4.7rem;
     --pfont: 2rem;
-    --trying-color:#ffa500;
 
 
 }
@@ -52,26 +51,13 @@ body h1 {
 
 
 
-/* button {
-    padding: 1rem 1.5rem;
-    border-radius: 1.7rem;
-    border: none;
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-}
 
-button:hover {
-    transition: 0.2s ease-in-out;
-    opacity: 0.4; 
-} */
 
 header {
     top: 0;
     left: 0%;
     width: 100%;
-    box-shadow: 0px 5px 9px #0000006b;
-    /* box-shadow: 1px 0px 6px rgba(114, 114, 114, 0.411); */
-    position: sticky; 
+    position: sticky;
     z-index: 3;
     background-color: var(--navcolor);
     padding: 1rem;
@@ -79,6 +65,44 @@ header {
 
 
 }
+
+/* .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-list ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    color: var(--textcolor);
+    font-size: 2rem;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.nav-container img {
+    padding-left: 2rem;
+} */
 /* nav-container && image-logo */
 .nav-container {
     max-width: 1200px;
@@ -120,7 +144,7 @@ header {
 .nav-container img {
     padding-left: 2rem;
 }
-                                  /* End  nav-conatiner && image-logo */      
+                                  /* End  nav-conatiner && image-logo */     
 /* nav-btn && explore button */
 button {
     border: none;
@@ -246,7 +270,6 @@ nav a :hover {
 
 .nav-btn:hover {
     transition: 0.2s ease-in-out;
-   
 }
 
 
@@ -267,6 +290,7 @@ nav a :hover {
     font-size: 2rem;  
     border: none;
     outline: none;
+    /* color: white; */
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
@@ -312,8 +336,6 @@ nav a :hover {
   .dropdown:hover .dropdown-content {
     display: block;
   }
-
-  
 /* extra animation */
 
 .nav-list ul {
@@ -380,7 +402,7 @@ nav a :hover {
     /* background-position: center; */
     background-repeat: no-repeat;
 }
-               /*  text animation */
+
 .text-container {
     max-width: 900px;
     color: white;
@@ -388,11 +410,12 @@ nav a :hover {
     padding-top: 5px;
     padding-left: 90px;
 }
+
 .text-container h1 {
     white-space: nowrap;
     overflow: hidden;
     position: relative;
-  color: #ffffff;
+   color: #ffffff;
   /* Foreground color */
   text-shadow: 1px 1px 0 #333, /* Shadow layer 1 */
                2px 2px 0 #333, /* Shadow layer 2 */
@@ -446,7 +469,7 @@ nav a :hover {
     }
 
     50% {
-        border-color: #FFC234;
+        /* border-color: #FFC234; */
     }
 }
 .lg_text {
@@ -460,6 +483,7 @@ nav a :hover {
 
 }
                      /* text animation end */
+
 /* hero extra */
 .explore-hero {
     display: flex;
@@ -591,7 +615,7 @@ nav a :hover {
 
 }
 
-@media(max-width:985px) {
+@media(max-width:917px) {
     html {
         font-size: 45%;
     }
@@ -603,11 +627,11 @@ nav a :hover {
     }
 
     .nav-container img {
-        width: 45%;
+        width: 40%;
     }
 
-    .nav-t img {
-        max-width: 30px;
+    .nav-btn img {
+        max-width: 29px;
     }
 
     .first-section {
@@ -625,9 +649,10 @@ nav a :hover {
     }
 
 }
-@media(max-width:965px) {
+
+@media(max-width:870px) {
     html {
-        font-size: 45%;
+        font-size: 40%;
     }
 
     :root {
@@ -637,53 +662,7 @@ nav a :hover {
     }
 
     .nav-container img {
-        width: 45%;
-    }
-
-    .nav-t img {
-        max-width: 27px;
-    }
-}
-
-@media(max-width:933px) {
-    html {
-        font-size: 45%;
-    }
-
-    :root {
-        --h1font: 8rem;
-        --h2font: 6rem;
-        --pfont: 1.8rem;
-    }
-
-    .nav-container img {
-        width: 50%;
-    }
-    .nav-t img {
-        max-width: 27px;
-    }
-
-
-
-
-
-}
-@media(max-width:925px) {
-    html {
-        font-size: 30%;
-    }
-
-    :root {
-        --h1font: 8rem;
-        --h2font: 6rem;
-        --pfont: 1.8rem;
-    }
-
-    .nav-container img {
-        width: 50%;
-    }
-    .nav-t img {
-        max-width: 18px;
+        width: 40%;
     }
 
 
@@ -751,6 +730,7 @@ nav a :hover {
         position: absolute;
         top: 100%;
         width: 100%;
+        /* height: 400px; */
         left: -100%;
         display: flex;
         flex-direction: column;
@@ -786,6 +766,7 @@ nav a :hover {
         background-color: var(--bodycolor);
         font-size: 2rem;
         border: 1px solid var(--btngcolor);
+        /* display: inline-block; */
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -822,7 +803,6 @@ nav a :hover {
         color: var(--textcolor);
         padding-left: 1rem;
     }
-   
 }
 @media(max-width:338px) {
     .footer-container {

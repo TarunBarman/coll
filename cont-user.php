@@ -19,7 +19,6 @@ include("database.php");
 </head>
 
 <body>
- 
 <?php
 error_reporting(0);
      if(isset($_POST['submit']))
@@ -45,7 +44,7 @@ error_reporting(0);
 
             ?>
 
-            <meta http-equiv = "refresh" content = "0.1; url = http://localhost/coll/index.php" />
+            <meta http-equiv = "refresh" content = "0.1; url = http://localhost/coll/user-index.php" />
         
         
             <?php
@@ -64,13 +63,17 @@ error_reporting(0);
   
 
 ?>
+ 
+
     <section class="contact-form">
 
         <h4 class="sectionHeader">contact us</h4>
         <h1 class="heading">Get In Touch!</h1>
-        
+        <!-- <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eos
+            inventore omnis aliquid rerum alias molestias.</p> -->
+
         <div class="contactForm">
-            <form action="cont-index.php" method="POST">
+            <form action="cont-user.php" method="POST">
                 <h1 class="sub-heading">Need Support !</h1>
                 <p class="para para2">We're open for any suggestion</p>
                 <input type="text" name="name" class="input" placeholder="your name" required>
@@ -119,9 +122,8 @@ error_reporting(0);
                 </article>
             </div>
         </div>
+    
     </section>
-
-
 </body>
 
 </html>

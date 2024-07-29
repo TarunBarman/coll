@@ -10,8 +10,8 @@
 </head>
 
 <body>
+      <header style=" box-shadow: 0px 5px 9px #0000006b">
 
-     <header style=" box-shadow: 0px 5px 9px #0000006b">
         <nav>
             <div class="nav-container">
                 <!-- <div class="nav-logo"> -->
@@ -32,7 +32,7 @@
                  <span class="third"></span>
                  <span class="fourth"></span>
                     </button></a>
-                <!-- <a href="logout.php" class="nav-btn">
+                    <!-- <a href="logout.php" class="nav-btn">
                         Sign out
                         <img src="assets/img/Vector.png" alt="">
                     </a> -->
@@ -134,16 +134,16 @@ if($total != 0)
             
            
           
-            <td><a href='update-tea.php?id=$result[id]'><input type='submit' value='update' class='update'></a>
-
-            <a href='delete-tea.php?id=$result[id]'><input type='submit' value='delete' class='delete' onclick = 'return checkdelete()'></a></td>
+            <td>
+            <a href='delete-tea2.php?id=$result[id]'><input type='submit' value='delete' class='delete' onclick = 'return checkdelete()'></a></td>
             
             </tr>
             ";
-           
+            // <a href='delete-tea.php?id=$result[id]'><input type='submit' value='delete' class='delete' onclick = 'return checkdelete()'></a></td>
+            
         
     }
-    // echo "Table has record";
+  
 }
 
 else
@@ -156,4 +156,3 @@ else
 <script src="display-script.js"></script>
 </body>
 </html>
-

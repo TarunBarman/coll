@@ -4,9 +4,6 @@ include("database.php");
 session_start();
 
 
-
-
-
 ?>
 
 
@@ -28,7 +25,7 @@ session_start();
 
     <?php
    
-// error_reporting(0);
+error_reporting(0);
  
 
      if(isset($_POST['register']))
@@ -72,7 +69,7 @@ session_start();
                              {
                               echo "<script> alert('Course Id: .$course_id') </script>";
                               ?>
-                              <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/ac-page.php" />
+                              <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/admin-page.php" />
  
                          <?php 
                                }
@@ -91,7 +88,7 @@ session_start();
                        {               
                          echo "<script> alert('Course Id: .$course_id') </script>";
                          ?>
-                             <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/ac-page.php" />
+                             <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/admin-page.php" />
 
                         <?php             
                     }   
@@ -157,12 +154,12 @@ session_start();
                             <label for="course_duration" name="cdu">Course Duration</label>
                             <div class="custom_select">
                                 <select  name="cdu" required>
-                                    <option value="0">0 Years</option>
+                                    <option value="0">0 Year</option>
                                     <option value="1">1 Year</option>
-                                    <option value="2">2 Years</option>
-                                    <option value="3">3 Years</option>
-                                    <option value="4">4 Years</option>
-                                    <option value="5">5 Years</option>
+                                    <option value="2">2 Year</option>
+                                    <option value="3">3 Year</option>
+                                    <option value="4">4 Year</option>
+                                    <option value="5">5 Year</option>
                                 </select>
                                 <!-- <select name="months" required>
                                     <option value="0">0 Months</option>

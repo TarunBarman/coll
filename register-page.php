@@ -33,7 +33,7 @@ session_start();
 
         if($data)
         {
-            echo "<script> alert ('Data inserted Succecfully') </script>";
+            echo "<script> alert ('Congratulations! Your account has been successfully created') </script>";
             // header('location:login.php');
             ?>
 

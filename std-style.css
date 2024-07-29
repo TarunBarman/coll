@@ -9,9 +9,9 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
-
 body {
 	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    min-height: 100vh;
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;
@@ -50,7 +50,7 @@ body {
 
 .wrapper .form {
   width: 100%;
-
+  
 }
 
 .wrapper .form .inputfield {
@@ -242,7 +242,7 @@ body {
   font-size: 14px;
   margin: 2px 0;
   display: inline-block;
-  color: black;
+  color: rgb(29, 29, 29);
   padding: 5px 150px;
 }
 
@@ -251,4 +251,4 @@ body {
 }
 #file-size{
   color: #010000;
-}
+} 

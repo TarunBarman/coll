@@ -4,7 +4,7 @@ include("database.php");
 
 $id = $_GET["id"];
 
-$query = "DELETE FROM TEACHER_REG WHERE id = '$id' ";
+$query = "DELETE FROM STD_REG WHERE id = '$id' ";
 
 $data = mysqli_query($conn,$query);
 
@@ -12,7 +12,7 @@ if($data){
      echo "<script> alert('Record Delete') </script>";
     ?>
 
-    <meta http-equiv = "refresh" content = "0.3; url = http://localhost/coll/display-tea.php" />
+    <meta http-equiv = "refresh" content = "0.3; url = http://localhost/coll/std-dlt2.php" />
 
 
     <?php

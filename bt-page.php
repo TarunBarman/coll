@@ -27,7 +27,7 @@ session_start();
 
     <?php
    
-// error_reporting(0);
+error_reporting(0);
  
 
      if(isset($_POST['register']))
@@ -70,7 +70,7 @@ session_start();
                              {
                               echo "<script> alert('batch Id: .$batch_id') </script>";
                               ?>
-                              <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/bt-page.php" />
+                              <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/admin-page.php" />
  
                          <?php 
                                }
@@ -89,7 +89,7 @@ session_start();
                        {               
                          echo "<script> alert('batch Id: .$batch_id') </script>";
                          ?>
-                             <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/bt-page.php" />
+                             <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/admin-page.php" />
 
                         <?php             
                     }   

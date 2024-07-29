@@ -84,7 +84,7 @@ error_reporting(0);
                              {
                               echo "<script> alert('registration Number: .$student_id') </script>";
                               ?>
-                              <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/admin-page.php" />
+                              <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/user-index.php" />
  
                          <?php 
                                }
@@ -103,7 +103,7 @@ error_reporting(0);
                        {               
                          echo "<script> alert('registration Number: .$student_id') </script>";
                          ?>
-                             <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/admin-page.php" />
+                             <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/user-index.php" />
 
                         <?php             
                     }   
@@ -147,7 +147,7 @@ error_reporting(0);
     <div class="wrapper">
         <div class="title">Student Registration
         </div>
-        <form action="std-page.php" enctype="multipart/form-data"  method="post">
+        <form action="std-page2.php" enctype="multipart/form-data"  method="post">
             <div class="form">
 
                 <div class="inputfield">
@@ -179,8 +179,6 @@ error_reporting(0);
                          </select>
                      </div>
                 </div>
-
-
                 <div class=" inputfield">
                     <label for="">Date of Birth</label>
                     <input type="date" class="input" name="dob" required>

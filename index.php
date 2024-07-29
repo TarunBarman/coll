@@ -14,17 +14,17 @@ session_start();
 </head>
 
 <body>
-    <header>
+    <header style=" box-shadow: 0px 5px 9px #0000006b">
         <nav>
             <div class="nav-container">
                 <!-- <div class="nav-logo"> -->
 
-                <img src="assets/img/logo.png" alt="logo">
+                <a href="#"> <img src="assets/img/Logo.png" alt=""> </a>
                 <!-- </div> -->
                 <div class="nav-list">
                     <div class="nav-list1">
                         <ul class="nav-list">
-                            <a href="#hero">
+                            <a href="#">
                                 <li>Home</li>
                             </a>
                             <a href="login.php">
@@ -44,10 +44,18 @@ session_start();
                     </div>
                 </div>
                 <ul class="nav-bar">
-                    <a href="login.php" class="nav-btn">
-                        Sign in
-                        <img src="assets/img/Vector.png" alt="">
-                    </a>
+                    <a href="login.php" class="nav-btn" >
+                <button class="nav-t">   Sign in  
+                <img src="assets/img/Vector.png" alt="">
+                <span class="first"></span>
+      <span class="second"></span>
+      <span class="third"></span>
+      <span class="fourth"></span>
+                    </button></a>
+                      <!-- <a href="login.php" class="nav-btn">
+                           Sign in
+                           <img src="assets/img/Vector.png" alt="">
+                        </a> -->
                     <a href="#"><i class="fa-solid fa-bars" id="menu-icon"></i></a>
                     <!-- <div class="mob-bar">
                         <i class="fa-solid fa-bars"></i>
@@ -61,25 +69,28 @@ session_start();
 
         <div class="text-container">
             <h2> Welcome to</h2>
-            <h1 class="lg_text">Acharya Prafulla Chandra Roy Government College Student Portal</h1>
+           <h1> <span class="line1">Acharya Prafulla Chandra Roy </span><br>
+            <span class="line2">Government College Student Portal </span></h1>
+            <!-- <h1 class="lg_text"> Acharya Prafulla Chandra Roy Government College Student Portal </h1> -->
             <div class="explore-hero">
-                <a href="team-page.php"><button class="btn-hero">
-                        Explore Now
+                <a href="team-page.php">
+             <button>   
+                Explore Now 
+                <span class="first"></span>
+                <span class="second"></span>
+                <span class="third"></span>
+                <span class="fourth"></span>
                     </button></a>
                 <a href="https://youtu.be/mX0wgQVTNLw?si=0meYLCKSeyNVEWbu">
-                    <span class="watch-view"><i class="fa-regular fa-circle-play"
-                            style="color: #f4712a;"></i></span>
+                    <span3 class="watch-view"><i class="fa-regular fa-circle-play"
+                            style="color: #f4712a;"></i></span3>
                     Watch View</a>
             </div>
+            
 
         </div>
     </section>
 
-    <!-- <footer>
-    <div class="end">
-        <h5>Project by APCRGC Team</h5>
-    </div>
-    </footer> -->
     <footer>
         <div class="footer-container container">
             <div class="footer-logo">
@@ -99,14 +110,13 @@ session_start();
                 <div class="footer-list">
 
                     <ul>
-                        <!-- apcrgc.admission@gmail -->
                         <a href="mailto:underrated.cs@gmail.com">
                             <li> underrated.cs@gmail.com
                             </li>
                         </a>
-                        <a href="tel:+91-353-2571340">
+                        <a href="tel:+91-8597976177">
                             <li>
-                                +91-353-2571340
+                                +91-8597976177
                             </li>
                         </a>
 
@@ -120,7 +130,7 @@ session_start();
     </footer>
     <section class="last-container container">
       <!-- <div class="copyright"> -->
-            @copyrighted by APCRGC Student(cs) batch 2021-2024
+            @copyrighted by APCRGC Students(CS) batch 2021-2024
         <!-- </div> -->
     </section>
 <!-- script -->

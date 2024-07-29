@@ -1,74 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Display teacher</title>
-   <link rel="stylesheet" href="display-style.css">
-   <style>
-    .update {
-    background-color: green;
-    color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-  padding: 5px 8px;
-  outline:none;
-  margin: 4px;
-
-
-}
-
-.update:hover {
-    transition: 0.2s ease-in-out;
-    /* opacity: 0.4; */
-    background-color: #F66F4D; ;
-    color: black;
-    cursor: pointer;
-    border: 1px solid black;
-}
-.delete {
-
- background-color:#F66F4D;
- color: gray;
-    border: 1px solid black;
-    border-radius: 5px;
-  padding: 5px 10px;
-  outline:none;
-  margin: 4px;
-}
-.delete:hover {
-
- background-color:green;
- color: white;
-
-}
-
-table th,tr,td{
-   
-    text-align:center;
-    box-sizing: border-box;
-    border: 2px solid black;
-    /* border:none; */
-   
-
-}
-table th{
-    padding: 5px 8px;
-    font-size: 15px;
-    font-weight: 500;
-    
-}
-table td{
-    font-size: 10px;
-
-
-}
-
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="display-style.css">
 </head>
+
 <body>
-<header>
+     <header style=" box-shadow: 0px 5px 9px #0000006b">
+
         <nav>
             <div class="nav-container">
                 <!-- <div class="nav-logo"> -->
@@ -81,38 +24,73 @@ table td{
                     </div>
                 </div>
                 <ul class="nav-bar">
-                    <a href="logout.php" class="nav-btn">
+                <a href="logout.php" class="nav-btn" >
+                <button class="nav-t">   Sign out 
+                <img src="assets/img/Vector.png" alt="">
+                 <span class="first"></span>
+                 <span class="second"></span>
+                 <span class="third"></span>
+                 <span class="fourth"></span>
+                    </button></a>
+                    <!-- <a href="logout.php" class="nav-btn">
                         Sign out
                         <img src="assets/img/Vector.png" alt="">
-                    </a>
+                    </a> -->
                     <a href="#"><i class="fa-solid fa-bars" id="menu-icon"></i></a>
-                    <!-- <div class="mob-bar">
-                        <i class="fa-solid fa-bars"></i>
-                    </div> -->
                 </ul>
             </div>
         </nav>
-    </header>
-    <!-- main -->
-    <section class="first-section">
-
-        <div class="text-container">
-            <h2> Welcome to</h2>
+   
+        </header>
+      
+    <main class="table" id="customers_table">
+   
+        <section class="table__header">
+            <h2>Welcome to</h2>
             <h1 class="lg_text">Teacher Record</h1>
-        </div>
-    </section>
-    </body>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="images/search.png" alt="">
+            </div>
+           
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>                
+        <th width=5%>id  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=15%>image  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=15%>First Name  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=15%>Last Name  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=>Teacher_Id  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=>Gender  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=>Category  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=>Dath of Birth  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=>Email  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=>Phone No  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=>Department (Subject)  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=>Designation  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=>Education Qualification  <span class="icon-arrow">&UpArrow;</span></th>
+        <th width=>Languages Known  <span class="icon-arrow">&UpArrow;</span></th>  
+        <th width=>Operation  <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+               
+
+        </section>
+    </main>
+    
+
+</body>
+
 </html>
-
-
-
 <?php
 
 
 include("database.php");
 session_start();
 error_reporting(0);
-$query = " SELECT *  FROM TEA_REG ";
+$query = " SELECT *  FROM TEACHER_REG ";
 // $insert_qry = " SELECT *  FROM std_reg ";
 
 $data = mysqli_query($conn, $query);
@@ -131,31 +109,7 @@ if($total != 0)
 
     
  ?>
-
-<center>
-    <table border=1px cellspacing=4>
-    <tr>
-
-
-        <th width=5%>id</th>
-        <th width=5%>image</th>
-        <th width=15%>First Name</th>
-        <th width=15%>Last Name</th>
-        <th width=7%>Teacher_Id</th>
-        <th width=10%>Gender</th>
-        <th width=15%>Category</th>
-        <th width=>Dath of Birth</th>
-        <th >Email</th>
-        <th >Phone No</th>
-        <th width=>Department (Subject)</th>
-        <th >Designation</th>
-        <th >Education Qualification</th>
-        <th >Languages Known</th>  
-        <th width=50% >Operation</th>
-    </tr>
-
-
-
+ 
 <?php
 
     while($result = mysqli_fetch_assoc($data))
@@ -164,7 +118,7 @@ if($total != 0)
         echo
         "<tr>
             <td>".$result['id']."</td>
-            <td><img src='".$result['tea_images']."' height='100px' width='100px'></td>
+            <td><img src='".$result['tea_images']."' height='90px' width='90px'></td>
             <td>".$result['fname']."</td>
             <td>".$result['lname'] ."</td>
             <td>".$result['emp_id'] ."</td>
@@ -181,18 +135,15 @@ if($total != 0)
            
           
             <td>
-            
             <a href='delete-tea.php?id=$result[id]'><input type='submit' value='delete' class='delete' onclick = 'return checkdelete()'></a></td>
             
             </tr>
             ";
-            // <a href='update-tea.php?id=$result[id]'><input type='submit' value='update' class='update'></a>
-            // &fn=$result[fname]&ln=$result[lname]&si=$result[student_id]&ftn=$result[fathername]&gen=$result[gender]&cat=$result[category]&dob=$result[dob]&em=$result[email]&ph=$result[ph]&course=$result[course]&add=$result[address]&st=$result[state]&pin=$result[pin]&photo=$result[photo]'>
-            // <td> <a href='update-std.php?id= <?php echo $result['id']; 
-        
+            // <a href='delete-tea.php?id=$result[id]'><input type='submit' value='delete' class='delete' onclick = 'return checkdelete()'></a></td>
+            
         
     }
-    // echo "Table has record";
+  
 }
 
 else
@@ -202,12 +153,7 @@ else
 
 ?>
 </table>
-</center>
-<script>
-    function checkdelete()
-    {
-        return confirm('Are you sure you want to delete this record?');
-    }
-
-    </script>
+<script src="display-script.js"></script>
+</body>
+</html>
 

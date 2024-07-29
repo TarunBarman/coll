@@ -51,26 +51,14 @@ body h1 {
 
 
 
-button {
-    padding: 1rem 1.5rem;
-    border-radius: 1.7rem;
-    border: none;
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-}
 
-button:hover {
-    transition: 0.2s ease-in-out;
-    opacity: 0.4;
-}
 
 header {
     top: 0;
     left: 0%;
     width: 100%;
-    box-shadow: 1px 0px 2px rgba(114, 114, 114, 0.411);
     position: sticky;
-    z-index: 1;
+    z-index: 3;
     background-color: var(--navcolor);
     padding: 1rem;
     background: var(--bodycolor);
@@ -78,7 +66,7 @@ header {
 
 }
 
-.nav-container {
+/* .nav-container {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -114,10 +102,147 @@ header {
 
 .nav-container img {
     padding-left: 2rem;
+} */
+/* nav-container && image-logo */
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
 }
 
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.nav-list ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    color: var(--textcolor);
+    font-size: 2rem;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    font-size: 2rem;
+   
+
+}
+
+.nav-container img {
+    padding-left: 2rem;
+    width: 35%;
+}
+                                  /* End  nav-conatiner && image-logo */     
+/* nav-btn && explore button */
+button {
+    border: none;
+    padding:1.1rem 1.5rem;
+    font-size: 15px;
+    position: relative;
+    background: linear-gradient(-20deg, #0E90D5, #3032A2) ;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.8s;
+    overflow: hidden;
+    border-radius: 100px;
+    z-index: 2; 
+    font-weight: 600;
+    border: 3px solid linear-gradient(-20deg, #0E90D5, #3032A2) ; 
+  }
+
+  button:hover {
+    color: #000;
+    box-shadow: 2px 8px 10px 0px rgb(0, 0, 0 , 0.8);
+
+}
+span {
+    transition: all 0.8s;
+    z-index: -1;
+  }
+
+  button .first {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    background: linear-gradient(-85deg,#f1ae9d, #f46d4b); 
+  }
+
+  button:hover .first {
+    top: 0;
+    right: 0;
+  }
+  button .second {
+    content: "";
+    position: absolute;
+    left: 25%;
+    top: -100%;
+    height: 100%;
+    width: 25%;
+    background: var(--btngcolor);
+  }
+
+  button:hover .second {
+    top: 0;
+    left: 50%;
+  }
+
+  button .third {
+    content: "";
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    top: 100%;
+    width: 25%;
+    background: var(--btngcolor);
+  }
+
+  button:hover .third {
+    top: 0;
+    left: 25%;
+  }
+
+  button .fourth {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 0;
+    height: 100%;
+    width: 25%;
+    background: var(--btngcolor);  
+  }
+
+  button:hover .fourth {
+    top: 0;
+    left: 0;
+  }
+.nav-t{
+    color:var(--btngcolor);
+}
+.nav-t:hover {
+    color: var(--white);
+    
+}
+
+.nav-t img {
+    width: 33px;
+ 
+}
 
 nav a {
     text-decoration: none;
@@ -125,43 +250,37 @@ nav a {
 }
 
 nav a :hover {
-   
     transition: 0.2s ease-in-out;
-    /* opacity: 0.4; */
     color: var(--btngcolor);
-
 }
 
+
 .nav-btn {
-    color: var(--btngcolor);
-    border: 1px solid var(--btngcolor);
+    color: var(--white);
+    border: 1px solid rgb(210, 208, 208);
     background-color: var(--bodycolor);
     font-size: 2rem;
-    border: 1px solid var(--btngcolor);
-    /* display: inline-block; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 10px;
-    border-radius: 5rem;
+    padding: 6px 8px;
+    border-radius: 5.5rem;
     transition: 0.2s ease-in-out;
-
+    
 }
 
 .nav-btn:hover {
     transition: 0.2s ease-in-out;
-    opacity: 0.4;
 }
 
-.nav-btn img {
-    width: 35px;
-}
 
 .nav-bar {
     display: flex;
     align-items: center;
     gap: 10px;
 }
+                                       /* End  nav-btn && explore button */
+
 /* dropdown */
 .dropdown {
     float: left;

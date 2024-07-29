@@ -70,7 +70,7 @@ error_reporting(0);
                                      {
                                       echo "<script> alert('Employe Number: .$emp_id') </script>";
                                       ?>
-                                      <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/admin-page.php" />
+                                      <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/user-index.php" />
          
                                  <?php 
                                        }
@@ -90,7 +90,7 @@ error_reporting(0);
                                {               
                                  echo "<script> alert('employe Number: .$emp_id') </script>";
                                  ?>
-                                     <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/admin-page.php" />
+                                     <meta http-equiv = "refresh" content = "0; url = http://localhost/coll/user-index.php" />
         
                                 <?php             
                             }   
@@ -105,7 +105,7 @@ error_reporting(0);
     <div class="wrapper">
         <div class="title">Teachers Registration
         </div>
-        <form action="tea-page.php" method="POST" enctype="multipart/form-data" data-netlify="true">
+        <form action="tea-page2.php" method="POST" enctype="multipart/form-data" data-netlify="true">
             <div class="form">
 
                 <div class="inputfield">
@@ -127,7 +127,14 @@ error_reporting(0);
                     <input type="radio" name="gender" id="radio" value="Male">Male
                     <input type="radio" name="gender" id="radio" value="Female">Female
                 </div>
-            
+                <!-- <div class="inputfield" id="category">
+                    <label for="">Category</label>
+                    <input type="radio" name="category" id="radio" value="genaral">Genaral
+                    <input type="radio" name="category" id="radio" value="sc">SC
+                    <input type="radio" name="category" id="radio" value="st">ST
+                    <input type="radio" name="category" id="radio" value="obc">OBC
+                   
+                </div> -->
                 <div class="inputfield">
                     <label>Category</label>
                     <div class="custom_select">
@@ -192,6 +199,11 @@ error_reporting(0);
                         </select>
                     </div>
                 </div>
+                <!-- <div class="inputfield">
+                    <label> Teaching Exprience</label>
+                    <input type="text" class="input" id="name" name="" placeholder="--Enter--" maxlength="30"
+                        pattern="[A-Za-z]{1,32}" title="Enter only alphabets" required>
+                </div> -->
 
                 <div class="inputfield">
                     <label>Education Qualification

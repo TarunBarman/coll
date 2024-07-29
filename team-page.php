@@ -17,7 +17,7 @@
     <div class="container py-5">
         <h1 class="text-center">Meet Our Team</h1>
         <div class="line"></div>
-        <p class="text-center mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, in?</p>
+        <!-- <p class="text-center mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, in?</p> -->
 
         <div class="row row-cols-1 row-cols-md-2 g-4 py-5">
             <div class="col">
@@ -29,7 +29,7 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">Tarun Barman</h5>
-                                <p class="card-text"><small class="text-muted">Founder</small></p>
+                                <p class="card-text"><small class="text-muted">Developer</small></p>
                                 <p class="card-text">BSC CS 2021-2024</p>
                                 <p class="card-text">APCRGC</p>
 
@@ -70,7 +70,7 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">Vabesh Sharma</h5>
-                                <p class="card-text"><small class="text-muted">Co-Founder</small></p>
+                                <p class="card-text"><small class="text-muted">Developer</small></p>
                                 <p class="card-text">BSC CS 2021-2024</p>
                                 <p class="card-text">APCRGC</p>
 
@@ -110,7 +110,7 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">Sonu Prasad Sah</h5>
-                                <p class="card-text"><small class="text-muted">Founder</small></p>
+                                <p class="card-text"><small class="text-muted">Developer</small></p>
                                 <p class="card-text">BSC CS 2021-2024</p>
                                 <p class="card-text">APCRGC</p>
 
@@ -146,17 +146,17 @@
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="assets/img/pics.png" class="img-fluid rounded-start" alt="...">
+                            <img src="assets/img/soniya.jpg" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">Tarun Barman</h5>
-                                <p class="card-text"><small class="text-muted">Founder & Ceo</small></p>
+                                <h5 class="card-title">Soniya Chhetri</h5>
+                                <p class="card-text"><small class="text-muted">Developer</small></p>
                                 <p class="card-text">BSC CS 2021-2024</p>
 
                             </div>
                             <div class="d-flex justify-content-around">
-                                <a href="tel:+918597976177">
+                                <a href="tel:+918906876883">
 
                                     <i class="bi bi-phone"></i>
                                 </a>
@@ -166,7 +166,7 @@
                                     <i class="bi bi-twitter"></i>
                                 </a>
 
-                                <a href="mailto:underrated.cs@gmail.com">
+                                <a href="mailto:soniyachhetri87@gmail.com">
 
                                     <i class="bi bi-envelope-check-fill"></i>
                                 </a>

@@ -3,6 +3,8 @@ include("database.php");
 session_start();
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,13 +13,13 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acharya Prafulla Chandra Roy Government College Student Portal/admin</title>
     <link rel="icon/image" href="assets/img/Logo.png" class="icon/images">
-    <link rel="stylesheet" href="admin-style.css">
+    <link rel="stylesheet" href="admin2-style.css">
     <script src="https://kit.fontawesome.com/f6a240a355.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <header>
+    <header style=" box-shadow: 0px 3px 9px #0000006b">
         <nav>
             <div class="nav-container">
                 <!-- <div class="nav-logo"> -->
@@ -40,9 +42,9 @@ session_start();
                         
                             <li>
              <div class="dropdown">
-                                  <a href=""> <button class="dropbtn">Add
+                                  <a href=""> <span class="dropbtn">Add
                                         <i class="fa fa-caret-down"></i>
-                                    </button> </a>
+                                    </span> </a>
                                     <div class="dropdown-content">
                                         <a href="tea-page.php">Add Teacher</a>
                                         <a href="std-page.php">Add Student</a>
@@ -54,12 +56,12 @@ session_start();
                             </li>
                             <li>
                                 <div class="dropdown">
-                                   <a href=""> <button class="dropbtn">Delete
+                                   <a href=""> <span class="dropbtn">Delete
                                         <i class="fa fa-caret-down"></i>
-                                    </button> </a>
+                                    </span> </a>
                                     <div class="dropdown-content">
-                                        <a href="tea-dlt.php">DeleteTeacher</a>
-                                        <a href="std-dlt.php">DeleteStudent</a>
+                                        <a href="tea-dlt2.php">DeleteTeacher</a>
+                                        <a href="std-dlt2.php">DeleteStudent</a>
                                         <a href="display-bt.php">Delete batch</a>
                                         <a href="display-ac.php">Delete Course</a>
 
@@ -74,14 +76,19 @@ session_start();
 
                 </div>
                 <ul class="nav-bar">
-                    <a href="logout.php" class="nav-btn">
+                <a href="logout.php" class="nav-btn" >
+                <button class="nav-t">   Sign out 
+                <img src="assets/img/Vector.png" alt="">
+                 <span class="first"></span>
+                 <span class="second"></span>
+                 <span class="third"></span>
+                 <span class="fourth"></span>
+                    </button></a>
+                    <!-- <a href="logout.php" class="nav-btn">
                        Sign out
                         <img src="assets/img/Vector.png" alt="">
-                    </a>
+                    </a> -->
                     <a href="#"><i class="fa-solid fa-bars" id="menu-icon"></i></a>
-                    <!-- <div class="mob-bar">
-                        <i class="fa-solid fa-bars"></i>
-                    </div> -->
                 </ul>
             </div>
         </nav>
@@ -121,14 +128,13 @@ session_start();
                 <div class="footer-list">
 
                     <ul>
-                        <!-- apcrgc.admission@gmail -->
                         <a href="mailto:underrated.cs@gmail.com">
                             <li> underrated.cs@gmail.com
                             </li>
                         </a>
-                        <a href="tel:+91-353-2571340">
+                        <a href="tel:+91-8597976177">
                             <li>
-                                +91-353-2571340
+                                +91-8597976177
                             </li>
                         </a>
 
@@ -142,7 +148,7 @@ session_start();
     </footer>
     <section class="last-container container">
         <!-- <div class="copyright"> -->
-        @copyrighted by APCRGC Student(cs) batch 2021-2024
+        @copyrighted by APCRGC Students(CS) batch 2021-2024
         <!-- </div> -->
     </section>
 
